@@ -4,25 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Now Playing</title>
   </head>
 
   <body>
-    <header class="header__title">
-      <h1>📽️🍿 Now Playing...</h1>
-      <p class="header__title--typing"></p>
+    <header class="page-header">
+      <button onclick="darkMode()" id="srnmode-btn">Dark Mode</button>
+      <h1 class="page-title">
+        <span>영</span>
+        <span>화</span>
+        <span>뭐</span>
+        <span>볼</span>
+        <span>까</span>
+        <span>?</span>
+        <span>🤔</span>
+      </h1>
+      <h2 class="page-header-text">현재 상영 중인 영화 소개 페이지</h2>
     </header>
     <form class="search" onsubmit="handleSearch(event)">
-      <label>영화 검색 : </label>
-      <input
-        type="text"
-        id="search-input"
-        placeholder="영화 제목을 검색해 보세요"
-      />
-      <button type="submit" id="search-btn">검색</button>
+      <input type="text" id="search-input" placeholder="Searching.. " />
+      <button type="submit" class="search-btn">검색</button>
     </form>
-    <section class="card-list"></section>
-    <script src="src/main.js"></script>
+    <main class="card-list"></main>
+    <footer class="page-footer"></footer>
+    <script src="./src/main.js"></script>
   </body>
 </html>
