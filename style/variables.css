@@ -1,7 +1,18 @@
 :root {
-    --main-bg-color: #e3e9f0;
+  --main-bg-color: linear-gradient(to bottom right, #e6e6e6, #a9bfdf);
+  --main-font-color: #1a1a1a;
+  --main-point-color: #3763a6;
+  --shadow-color: #bababa;
+  --transparent-color: #ffffff00;
 }
 
+.dark-mode {
+  --main-bg-color: linear-gradient(to bottom right, #2b3643, #090d13);;
+  --main-font-color: #e7e7e7;
+  --main-point-color: #d4bf7c;
+  --shadow-color: #3e5067;
+  }
+
 .movie-card {
-    --card-bg-color: #a1b7cf;
+  --card-bg-color: #dddddd32;
 }

@@ -1,5 +1,6 @@
 @import "variables.css";
 @import "fonts.css";
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,97 +10,268 @@
 
 body {
   font-family: 'Pretendard-Regular', sans-serif;
-  background-color: var(--main-bg-color);
+  background: var(--main-bg-color);
+  color: var(--main-font-color);
 }
 
-.card-list {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-content: center;
+h1 {
+  font-size: 5rem;
 }
 
-.movie-card {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
-  margin: 20px;
-  padding: 40px;
-  width: 350px;
-  justify-self: center;
-  background-color: var(--card-bg-color);
-  border-radius: 10px;
-  cursor: pointer;
-  user-select: none;
+h2 {
+  font-size: 2.5rem;
 }
 
-.movie-card img {
-  width: 100%;
-  border-radius: 10px;
+p {
+  font-size: 1rem;
 }
+
+a {
+  font-size: 1rem;
+}
+
 
 /* 헤더 */
-.header__title {
+.page-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 8vh;
   padding: 30px 0;
-
-  height: 200px;
-
-  font-family: 'MaplestoryOTFBold', sans-serif;
-  font-size: 2em;
 }
-
-
-/* 헤더 타이핑 */
-.header__title--typing {
-  margin-top: 5px;
-
-  font-size: 2.5rem;
+.page-title {
+  user-select: none;
   font-family: 'SBAggroB', sans-serif;
-
-  color: #264fd5;
+}
+.page-title span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce 1s ease infinite alternate;
+  color: var(--main-font-color);
+  text-shadow: 0 1px 0 var(--shadow-color),
+               0 2px 0 var(--shadow-color),
+               0 3px 0 var(--shadow-color),
+               0 4px 0 var(--shadow-color),
+               0 5px 0 var(--shadow-color),
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .4);
 }
 
-.header__title--typing::after {
-  content: '';
-  margin-left: .4rem;
-  border-right: 2px solid #000000;
-  animation: cursor .8s infinite steps(2);
+.page-title span:nth-child(2) { animation-delay: .1s; }
+.page-title span:nth-child(3) { animation-delay: .2s; }
+.page-title span:nth-child(4) { animation-delay: .3s; }
+.page-title span:nth-child(5) { animation-delay: .4s; }
+.page-title span:nth-child(6) { animation-delay: .5s; }
+.page-title span:nth-child(7) { animation-delay: .6s; }
+.page-title span:nth-child(8) { animation-delay: .7s; }
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 var(--shadow-color),
+                 0 2px 0 var(--shadow-color),
+                 0 3px 0 var(--shadow-color),
+                 0 4px 0 var(--shadow-color),
+                 0 5px 0 var(--shadow-color),
+                 0 6px 0 var(--shadow-color),
+                 0 7px 0 var(--shadow-color),
+                 0 8px 0 var(--shadow-color),
+                 0 9px 0 var(--shadow-color),
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}
+.page-header-text{
+  margin-top: 50px;
+  color: var(--main-point-color);
+  font-family: 'MaplestoryOTFBold', sans-serif;
 }
 
-@keyframes cursor {
-  from { border-right: 2px solid var(--main-bg-color); }
-  to { border-right: 2px solid #000000; }
+#srnmode-btn {
+  position: absolute;
+  top: 5vh;
+  right: 10vh;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+	padding: 10px 15px;
+	display: inline-block;
+	text-align: center;
+  background-color: var(--transparent-color);
+	color: var(--main-font-color);
+  font-family: 'MaplestoryOTFBold', sans-serif;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+#srnmode-btn:hover {
+  background-color: var(--main-point-color);
+  color: var(--main-font-color);
+}
+#srnmode-btn:active {
+  top: 4px;
 }
 
 /* 영화 검색창 */
 .search {
   width: 95%;
   display: flex;
-  margin: 0 auto;
+  margin: 2vh auto;
   justify-content: center;
   padding: 20px 0;
-
-  border-bottom: 1px solid #2c2c2c;
-
-  font-family: 'MaplestoryOTFBold', sans-serif;
 }
-
-.search label {
-  font-size: 25px;
-}
-
 .search input {
+  width: 25vh;
   margin-left: 20px;
-  min-width: 200px;
+  margin-right: 5px;
   padding: 5px 10px;
+  border: 0px;
+  outline: none;
+  border-radius: 10px;
+  background-color: #7c91b0ac;
+  transition:all 0.3s ease-in-out;
+  color: #f1f3f5;
 }
-
-.search button {
+#search-input::placeholder {
+  color: #f1f3f5;
+}
+.search input:focus {
+  transform: scale(1.05);
+}
+.search-btn {
   margin-left: 10px;
   padding: 5px;
+  position: relative;
+  border: none;
+  min-width: 70px;
+  min-height: 40px;
+  background: linear-gradient(
+      90deg,
+      #e9d493 0%,
+      #d1c04f 100%
+  );
+  border-radius: 1000px;
+  color: #706042;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px #aa9c76a3;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.search-btn:hover {
+  transform: scale(1.2);
+}
+.search-btn:hover::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 5px solid #ffdc42;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+@keyframes ring {
+  0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+  }
+  100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+  }
 }
 
-h3 {
-  margin-bottom: 10px;
+
+/* 카드 리스트 */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+}
+.movie-card {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.24);
+  margin: 20px;
+  padding: 20px;
+  width: 350px;
+  min-height: 70vh;
+  justify-self: center;
+  background: var(--card-bg-color);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition:all 0.3s ease-in-out;
+}
+.movie-card:hover {
+	transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+	-moz-transform:scale(1.05);
+	-o-transform:scale(1.05);
+}
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+.page-footer {
+  margin-top: 8vh;
+}
+
+/* 데스크탑 좁은 창크기 */
+@media (min-width: 1301px) and (max-width: 1650px) {
+  .card-list {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+/* 태블릿 화면 */
+@media (min-width: 768px) and (max-width: 1300px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+
+  .card-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+/* 모바일 화면 */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+  .card-list {
+    grid-template-columns: repeat(1, auto);
+  }
 }
