@@ -73,6 +73,7 @@ a {
 .page-title span:nth-child(6) { animation-delay: .5s; }
 .page-title span:nth-child(7) { animation-delay: .6s; }
 .page-title span:nth-child(8) { animation-delay: .7s; }
+.page-title span:nth-child(9) { animation-delay: .7s; }
 
 @keyframes bounce {
   100% {
@@ -97,8 +98,8 @@ a {
 
 .dark-btn_container {
   position: absolute;
-  top: 50px;
-  right: 50px;
+  top: 4vh;
+  right: 5vh;
 }
 .dark-btn {
   border: none;
@@ -106,6 +107,18 @@ a {
   cursor: pointer;
   background-color: var(--transparent-color);
   font-size: 2rem;
+  animation: scaleAni 1.5s infinite alternate;
+}
+@keyframes scaleAni {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 

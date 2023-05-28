@@ -5,7 +5,8 @@
 window.addEventListener("DOMContentLoaded", () => {
   const inputCursor = document.getElementById("search-input")
   inputCursor.focus();
-})
+});
+
 
 // 다크모드
 // ❓ 사용자 시스템OS 모드에 따라 첫 다크모드를 불러올 순 없을까?
@@ -16,8 +17,12 @@ function darkMode() {
   const btnDarkmode = document.querySelector(".dark-btn span"); // .dark-btn 내의 <span> 요소 선택
   if (btnDarkmode.textContent === "🌙") {
     btnDarkmode.textContent = "🌅";
+    const inputCursor = document.getElementById("search-input")
+    inputCursor.focus();
   } else {
     btnDarkmode.textContent = "🌙";
+    const inputCursor = document.getElementById("search-input")
+    inputCursor.focus();
   }
 }
 
