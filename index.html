@@ -5,29 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-    <title>Now Playing</title>
+    <title>영화 뭐볼까?</title>
+    <script
+      src="https://kit.fontawesome.com/50eb116aa5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <header class="page-header">
-      <button onclick="darkMode()" id="srnmode-btn">Dark Mode</button>
+      <div class="dark-btn_container">
+        <button onclick="darkMode()" class="dark-btn">
+          <span>🌙</span>
+        </button>
+      </div>
       <h1 class="page-title">
         <span>영</span>
         <span>화</span>
+        <span>&nbsp;</span>
         <span>뭐</span>
         <span>볼</span>
         <span>까</span>
         <span>?</span>
         <span>🤔</span>
       </h1>
-      <h2 class="page-header-text">현재 상영 중인 영화 소개 페이지</h2>
+      <h2 class="page-header-text">현재 상영 중인 영화들을 소개합니다.</h2>
     </header>
     <form class="search" onsubmit="handleSearch(event)">
-      <input type="text" id="search-input" placeholder="Searching.. " />
+      <input
+        type="text"
+        id="search-input"
+        placeholder="영화 제목을 검색해주세요."
+      />
       <button type="submit" class="search-btn">검색</button>
     </form>
+    <nav class="nav-sorting">
+      <ul class="sorting-list">
+        <li><button id="btn_sort-by-title">제목 순</button></li>
+        <li><button id="btn_sort-by-date">개봉일 순</button></li>
+        <li><button id="btn_sort-by-rating">평점 순</button></li>
+        <li>
+          <button id="btn-sort-reset">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
     <main class="card-list"></main>
-    <footer class="page-footer"></footer>
+    <div class="page-container">
+      <div class="top-btn">
+        <i class="fa-solid fa-angles-up"></i>
+      </div>
+    </div>
+    <footer class="page-footer">
+      <div class="myinfo">
+        <li>
+          <a href="https://github.com/xoxojw" target="_blank">
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://xoxojw.tistory.com/" target="_blank">
+            <i class="fa-solid fa-house-chimney"></i>
+          </a>
+        </li>
+      </div>
+    </footer>
     <script src="./src/main.js"></script>
   </body>
 </html>
