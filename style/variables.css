@@ -1,16 +1,21 @@
 :root {
   --main-bg-color: linear-gradient(to bottom right, #e6e6e6, #a9bfdf);
   --main-font-color: #1a1a1a;
-  --main-point-color: #3763a6;
-  --shadow-color: #bababa;
+  --main-point-color: #5c7caa;
+  --shadow-color: #a8aeba;
+  --btn-bg-color: #526f99;
+  --btn-point-color: #090d13;
+  --btn-font-color: #e6e6e6;
   --transparent-color: #ffffff00;
 }
 
 .dark-mode {
   --main-bg-color: linear-gradient(to bottom right, #2b3643, #090d13);;
-  --main-font-color: #e7e7e7;
+  --main-font-color: #dfdfdf;
   --main-point-color: #d4bf7c;
-  --shadow-color: #3e5067;
+  --btn-bg-color: #40454e;
+  --btn-point-color: #d4bf7c;
+  --shadow-color: #080f15;
   }
 
 .movie-card {

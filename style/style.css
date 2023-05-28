@@ -22,16 +22,21 @@ h2 {
   font-size: 2.5rem;
 }
 
+ul, li {
+  list-style: none;
+}
+
 p {
   font-size: 1rem;
 }
 
 a {
   font-size: 1rem;
+  text-decoration: none;
 }
 
 
-/* 헤더 */
+/* 페이지 헤더 */
 .page-header {
   display: flex;
   flex-direction: column;
@@ -41,7 +46,7 @@ a {
 }
 .page-title {
   user-select: none;
-  font-family: 'SBAggroB', sans-serif;
+  font-family: 'TheJamsil5Bold', sans-serif;
 }
 .page-title span {
   position: relative;
@@ -90,39 +95,29 @@ a {
   font-family: 'MaplestoryOTFBold', sans-serif;
 }
 
-#srnmode-btn {
+.dark-btn_container {
   position: absolute;
-  top: 5vh;
-  right: 10vh;
+  top: 50px;
+  right: 50px;
+}
+.dark-btn {
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
-  padding: 7px;
-  border-radius: 5px;
-	padding: 10px 15px;
-	display: inline-block;
-	text-align: center;
   background-color: var(--transparent-color);
-	color: var(--main-font-color);
-  font-family: 'MaplestoryOTFBold', sans-serif;
-  font-weight: 700;
-  transition: all 0.5s ease-in-out;
+  font-size: 2rem;
 }
-#srnmode-btn:hover {
-  background-color: var(--main-point-color);
-  color: var(--main-font-color);
-}
-#srnmode-btn:active {
-  top: 4px;
-}
+
 
 /* 영화 검색창 */
 .search {
   width: 95%;
   display: flex;
-  margin: 2vh auto;
+  margin: 3vh auto;
   justify-content: center;
   padding: 20px 0;
 }
-.search input {
+#search-input {
   width: 25vh;
   margin-left: 20px;
   margin-right: 5px;
@@ -137,7 +132,7 @@ a {
 #search-input::placeholder {
   color: #f1f3f5;
 }
-.search input:focus {
+#search-input:focus {
   transform: scale(1.05);
 }
 .search-btn {
@@ -162,7 +157,7 @@ a {
 .search-btn:hover {
   transform: scale(1.2);
 }
-.search-btn:hover::after {
+.search-btn:hover:after {
   content: "";
   width: 50px;
   height: 50px;
@@ -188,6 +183,29 @@ a {
   }
 }
 
+/* 카드 정렬 버튼 */
+.sorting-list {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+.sorting-list li:not(:last-of-type) {
+  margin-right: 2vh;
+}
+.sorting-list button {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  color: var(--main-point-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.sorting-list button:hover {
+  color: var(--main-font-color);
+  font-weight: 700;
+  text-decoration: underline;
+  transform: translateY(-7px);
+}
 
 /* 카드 리스트 */
 .card-list {
@@ -220,11 +238,51 @@ a {
 }
 
 
-.page-footer {
-  margin-top: 8vh;
+/* 상단 이동 버튼 */
+.top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--main-text-color);
+  background-color: #ffffff34;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px var(--shadow-color);
+  transition: 0.3s ease-in-out;
+}
+.top-btn:hover {
+  background-color: #ffffff9a;
 }
 
-/* 데스크탑 좁은 창크기 */
+/* 페이지 푸터 */
+.myinfo {
+  display: flex;
+  justify-content: center;
+  margin: 7vh auto;
+}
+.myinfo li:not(:last-of-type) {
+  margin-right: 2vh;
+}
+.myinfo a {
+  color: var(--main-font-color);
+}
+.fa-square-github {
+  font-size: 2.2rem;
+}
+.fa-house-chimney {
+  font-size: 1.9rem;
+}
+
+
+
+/* 노트북(좁은 데스크탑) 화면 - grid 3칸*/
 @media (min-width: 1301px) and (max-width: 1650px) {
   .card-list {
     grid-template-columns: repeat(3, auto);
