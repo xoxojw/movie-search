@@ -3,25 +3,27 @@
 // class가 아닌 id를 사용하는 이유: id는 고유하기 때문에 확실하게 식별할 수 있음
 // ❓ 다크모드 전환 후에도 검색창에 포커스 유지하려면 어떻게 할까..?
 window.addEventListener("DOMContentLoaded", () => {
-  const inputCursor = document.getElementById("search-input")
+  const inputCursor = document.getElementById("search-input");
   inputCursor.focus();
 });
 
 
 // 다크모드
+// ❓ 다크모드 전환 후에도 검색창에 포커스 유지하는 방법이 이게 최선일까?
+//      >> 너무 반복되는 코드를 쓴 느낌
 // ❓ 사용자 시스템OS 모드에 따라 첫 다크모드를 불러올 순 없을까?
-function darkMode() {
+const darkMode = () => {
   const body = document.body;
   body.classList.toggle("dark-mode");
 
   const btnDarkmode = document.querySelector(".dark-btn span"); // .dark-btn 내의 <span> 요소 선택
   if (btnDarkmode.textContent === "🌙") {
     btnDarkmode.textContent = "🌅";
-    const inputCursor = document.getElementById("search-input")
+    const inputCursor = document.getElementById("search-input");
     inputCursor.focus();
   } else {
     btnDarkmode.textContent = "🌙";
-    const inputCursor = document.getElementById("search-input")
+    const inputCursor = document.getElementById("search-input");
     inputCursor.focus();
   }
 }
@@ -45,8 +47,9 @@ const fetchMovieData = async () => {
 };
 
 // 불러온 movieAPI로 카드 생성
-// 비동기함수 async, wait
-// map으로 새 배열 생성
+// 1. 비동기함수 async, wait
+// 2. map으로 새 배열 생성
+// 3. join 메서드로 새롭게 생성된 배열을 하나의 큰 문자열로 연결
 const createMovieCards = async () => {
   const movies = await fetchMovieData();
   const cardList = document.querySelector(".card-list");
@@ -56,18 +59,12 @@ const createMovieCards = async () => {
         `<div class="movie-card" id=${movie.id}>
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="movie-poster" />
             <h3 class="movie-title">${movie.title}</h3>
-            <p class="release-date">Release date: ${movie.release_date}</p>
+            <p class="release-date">Release date : ${movie.release_date}</p>
+            <p class="vote-average">Rating : ${movie.vote_average}</p>
             <p class="movie-overview">${movie.overview}</p>
-            <p class="vote-average">Rating: ${movie.vote_average}</p>
         </div>`
     )
     .join("");
-
-  const textElements = cardList.querySelectorAll(".movie-title, .release-date, .movie-overview, .vote-average");
-  textElements.forEach((element) => {
-    element.style.lineHeight = "1.5";
-  });
-
 
   // 🤔 클릭하면 영화 아이디 나오게 구현
   // 💡 movies는 배열이므로 {$movies.id}와 같이 속성을 직접 참조할 수 없음
@@ -181,7 +178,7 @@ btnSortByRating.addEventListener("click", sortByRating);
 
 // 4. 정렬 초기화
 // API를 다시 불러오는 방법으로 정렬을 초기화했는데..
-// 처음 불러온 API의 배열 값을 저장해둬서 그 순서를 반환하게 할 순 없을까?
+// ❓ 처음 불러온 API의 배열 값을 저장해둬서 그 순서를 반환하게 할 순 없을까?
 const resetMovieCards = async () => {
   const movies = await fetchMovieData();
   const cardList = document.querySelector(".card-list");
@@ -192,16 +189,11 @@ const resetMovieCards = async () => {
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="movie-poster" />
             <h3 class="movie-title">${movie.title}</h3>
             <p class="release-date">Release date: ${movie.release_date}</p>
-            <p class="movie-overview">${movie.overview}</p>
             <p class="vote-average">Rating: ${movie.vote_average}</p>
+            <p class="movie-overview">${movie.overview}</p>
         </div>`
     )
     .join("");
-
-  const textElements = cardList.querySelectorAll(".movie-poster, .movie-title, .release-date, .movie-overview, .vote-average");
-  textElements.forEach((element) => {
-    element.style.lineHeight = "1.5";
-  });
 };
 
 const resetButton = document.querySelector("#btn-sort-reset");
