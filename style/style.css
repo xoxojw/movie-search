@@ -46,7 +46,7 @@ a {
 }
 .page-title {
   user-select: none;
-  font-family: 'TheJamsil5Bold', sans-serif;
+  font-family: 'Cafe24Ssurround', sans-serif;
 }
 .page-title span {
   position: relative;
@@ -105,7 +105,7 @@ a {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: var(--transparent-color);
+  background-color: transparent;
   font-size: 2rem;
   animation: scaleAni 1.5s infinite alternate;
 }
@@ -114,7 +114,7 @@ a {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -126,15 +126,14 @@ a {
 .search {
   width: 95%;
   display: flex;
-  margin: 3vh auto;
+  margin: 5vh auto;
   justify-content: center;
   padding: 20px 0;
 }
 #search-input {
   width: 25vh;
-  margin-left: 20px;
-  margin-right: 5px;
-  padding: 5px 10px;
+  margin-right: 1.5vh;
+  padding: 15px;
   border: 0px;
   outline: none;
   border-radius: 10px;
@@ -149,7 +148,6 @@ a {
   transform: scale(1.05);
 }
 .search-btn {
-  margin-left: 10px;
   padding: 5px;
   position: relative;
   border: none;
@@ -197,16 +195,19 @@ a {
 }
 
 /* 카드 정렬 버튼 */
-.sorting-list {
+.page-nav {
   display: flex;
   justify-content: center;
-  margin: 40px auto;
+  margin-bottom: 1vh;
 }
-.sorting-list li:not(:last-of-type) {
-  margin-right: 2vh;
+.sorting-list {
+  text-align: center;
+}
+.sorting-list li {
+  display:inline-block;
 }
 .sorting-list button {
-  padding: 10px;
+  padding: 25px;
   border: none;
   background-color: transparent;
   color: var(--main-point-color);
@@ -228,15 +229,15 @@ a {
 }
 .movie-card {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.24);
-  margin: 20px;
-  padding: 20px;
-  width: 350px;
+  margin: 2vh;
+  padding: 30px;
+  width: 30vh;
   min-height: 70vh;
-  justify-self: center;
   background: var(--card-bg-color);
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
+  line-height: 1.5;
   transition:all 0.3s ease-in-out;
 }
 .movie-card:hover {
@@ -249,7 +250,16 @@ a {
   width: 100%;
   border-radius: 10px;
 }
-
+.movie-title { 
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.movie-overview {
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
 
 /* 상단 이동 버튼 */
 .top-btn {
@@ -286,11 +296,8 @@ a {
 .myinfo a {
   color: var(--main-font-color);
 }
-.fa-square-github {
-  font-size: 2.2rem;
-}
-.fa-house-chimney {
-  font-size: 1.9rem;
+.fa-github, .fa-house-chimney {
+  font-size: 1.5rem;
 }
 
 
