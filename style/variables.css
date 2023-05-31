@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: linear-gradient(to bottom right, #e6e6e6, #a9bfdf);
+  --main-bg-color: linear-gradient(to bottom right, #e6e6e6, #c7cfd9);
   --main-font-color: #1a1a1a;
   --main-point-color: #5c7caa;
   --shadow-color: #a8aeba;
@@ -14,7 +14,7 @@
   --main-point-color: #d4bf7c;
   --btn-bg-color: #40454e;
   --btn-point-color: #d4bf7c;
-  --shadow-color: #030a11;
+  --shadow-color: #0b0e11;
   }
 
 .movie-card {

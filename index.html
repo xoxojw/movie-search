@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-    <title>영화 뭐볼까?</title>
+    <title>영화 뭐 볼까?</title>
     <script
       src="https://kit.fontawesome.com/50eb116aa5.js"
       crossorigin="anonymous"
@@ -14,30 +14,48 @@
 
   <body>
     <header class="page-header">
+      <div class="weather-container">
+        <div class="weather-container">
+          <div class="top-bar">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="location">도시명</div>
+            <div class="time"></div>
+          </div>
+          <div class="info">
+            <div class="data">
+              <div class="block">
+                <i class="fas fa-wind"></i>
+                <span id="wind">풍속</span>
+              </div>
+              <div class="block">
+                <i class="fas fa-tint"></i>
+                <span id="humidity">습도</span>
+              </div>
+            </div>
+            <span class="conditions">기상상태</span>
+            <div class="temperature">
+              <span>8&deg;</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="dark-btn_container">
         <button onclick="darkMode()" class="dark-btn">
           <span>🌙</span>
         </button>
       </div>
-      <h1 class="page-title">
-        <span>🍿</span>
-        <span>영</span>
-        <span>화</span>
-        <span>&nbsp;</span>
-        <span>뭐</span>
-        <span>볼</span>
-        <span>까</span>
-        <span>?</span>
-        <span>🤔</span>
-      </h1>
-      <h2 class="page-header-text">현재 상영 중인 영화들을 둘러보세요.</h2>
+      <h1 class="page-title">영화 뭐 볼까?</h1>
+      <h2 class="page-header-desc">현재 상영 중인 영화들을 둘러보세요.</h2>
     </header>
     <form class="search" onsubmit="handleSearch(event)">
-      <input
-        type="text"
-        id="search-input"
-        placeholder="영화 제목을 검색해주세요."
-      />
+      <div class="gradient-border" id="box">
+        <input
+          type="text"
+          autocomplete="off"
+          id="search-input"
+          placeholder="영화 제목을 검색해주세요."
+        />
+      </div>
       <button type="submit" class="search-btn">검색</button>
     </form>
     <nav class="page-nav">
