@@ -1,6 +1,5 @@
 @import "variables.css";
 @import "fonts.css";
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -48,54 +47,86 @@ a {
   user-select: none;
   font-family: 'Cafe24Ssurround', sans-serif;
 }
-.page-title span {
-  position: relative;
-  top: 20px;
-  display: inline-block;
-  animation: bounce 1s ease infinite alternate;
-  color: var(--main-font-color);
-  text-shadow: 0 1px 0 var(--shadow-color),
-               0 2px 0 var(--shadow-color),
-               0 3px 0 var(--shadow-color),
-               0 4px 0 var(--shadow-color),
-               0 5px 0 var(--shadow-color),
-               0 6px 0 transparent,
-               0 7px 0 transparent,
-               0 8px 0 transparent,
-               0 9px 0 transparent,
-               0 10px 10px rgba(0, 0, 0, .4);
-}
-
-.page-title span:nth-child(2) { animation-delay: .1s; }
-.page-title span:nth-child(3) { animation-delay: .2s; }
-.page-title span:nth-child(4) { animation-delay: .3s; }
-.page-title span:nth-child(5) { animation-delay: .4s; }
-.page-title span:nth-child(6) { animation-delay: .5s; }
-.page-title span:nth-child(7) { animation-delay: .6s; }
-.page-title span:nth-child(8) { animation-delay: .7s; }
-.page-title span:nth-child(9) { animation-delay: .7s; }
-
-@keyframes bounce {
-  100% {
-    top: -20px;
-    text-shadow: 0 1px 0 var(--shadow-color),
-                 0 2px 0 var(--shadow-color),
-                 0 3px 0 var(--shadow-color),
-                 0 4px 0 var(--shadow-color),
-                 0 5px 0 var(--shadow-color),
-                 0 6px 0 var(--shadow-color),
-                 0 7px 0 var(--shadow-color),
-                 0 8px 0 var(--shadow-color),
-                 0 9px 0 var(--shadow-color),
-                 0 50px 25px rgba(0, 0, 0, .2);
-  }
-}
-.page-header-text{
+.page-header-desc{
   margin-top: 50px;
   color: var(--main-point-color);
   font-family: 'MaplestoryOTFBold', sans-serif;
 }
 
+/* 날씨위젯 */
+/* 출처 https://codepen.io/idkwthfml/pen/eYBObyv */
+.weather-container {
+  position: absolute;
+  top: 3vh;
+  left: 5vh;
+  width: 25vh;
+  height: auto;
+  color: var(--main-font-color);
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+}
+.time {
+  margin-left: auto;
+}
+
+.fa-location-dot {
+  margin-right: 5px;
+}
+
+.location {
+  font-size: 11pt;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.time {
+  font-size: 11pt;
+  padding: 0.5em;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+}
+.data {
+  font-size: 0.8em;
+  padding: 0.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block {
+  width: 7vh;
+  padding: 0.2em;
+}
+.block i {
+  width: 20px;
+  color: #888888;
+}
+
+.conditions {
+  font-size: 1.7em;
+  font-weight: 700;
+  color: var(--main-font-color);
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.temperature {
+  color: var(--main-point-color);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+
+/* 다크모드 버튼 */
 .dark-btn_container {
   position: absolute;
   top: 4vh;
@@ -134,8 +165,8 @@ a {
   width: 25vh;
   margin-right: 1.5vh;
   padding: 15px;
-  border: 0px;
   outline: none;
+  border: 0;
   border-radius: 10px;
   background-color: #7c91b0ac;
   transition:all 0.3s ease-in-out;
@@ -349,7 +380,15 @@ a {
   a {
     font-size: 1rem;
   }
+
   .card-list {
     grid-template-columns: repeat(1, auto);
+  }
+}
+
+/* 날씨 위젯 반응형 */
+@media (max-width: 1000px) or (max-height: 900px) {
+  .weather-container {
+    display: none;
   }
 }
