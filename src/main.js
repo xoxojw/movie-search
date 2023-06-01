@@ -47,8 +47,8 @@ const getCurrentWeather = async (lat, lon) => {
   const weatherApi = 'f2607caf98a57987d7cda1e1b4034769'
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApi}&units=metric`);
   const weatherData = await response.json();
-  console.log(weatherData);
   updateWeatherWidget(weatherData);
+  console.log(weatherData);
 }
 
 // 3. 날씨 위젯에 불러온 데이터 업데이트하기
@@ -66,7 +66,8 @@ const updateWeatherWidget = (weatherData) => {
   conditionElement.textContent = `${weatherData.weather[0].main}`;
   windSpeedElement.textContent = `${weatherData.wind.speed}km/h`
   humidityElement.textContent = `${weatherData.main.humidity}%`
-  temperatureElement.textContent = `${weatherData.main.temp}°`;
+  // .toFixed() 메서드 - 지정돈 소수점 자리수까지 반올림
+  temperatureElement.textContent = `${weatherData.main.temp.toFixed(1)}°C`;
   // weatherIcon.textContent = `${weatherData.weather[0].icon}`
 }
 
@@ -76,23 +77,23 @@ const createWeatherWidget = (weatherData) => {
   weatherContainer.innerHTML =
     `<div class="top-bar">
         <i class="fa-solid fa-location-dot"></i>
-        <div class="location">도시명</div>
+        <div class="location"></div>
         <div class="time"></div>
       </div>
       <div class="info">
         <div class="data">
           <div class="block">
             <i class="fas fa-wind"></i>
-            <span id="wind">풍속</span>
+            <span id="wind"></span>
           </div>
           <div class="block">
             <i class="fas fa-tint"></i>
-            <span id="humidity">습도</span>
+            <span id="humidity"></span>
           </div>
         </div>
-        <span class="conditions">기상상태</span>
+        <span class="conditions"></span>
         <div class="temperature">
-          <span>8&deg;</span>
+          <span></span>
         </div>
       </div>`;
 };
