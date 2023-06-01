@@ -27,7 +27,7 @@
 - `sort()`,`localeCompare()`,`parseFloat` 영화 제목, 개봉일, 평점(내림차순) 순으로 버튼 클릭 시 영화 카드 정렬
 ### 3. 날씨 오픈 API 이용 | OpenWeatherMap(https://openweathermap.org/ )
 - `Geolocation.getCurrentPosition()` 메서드를 사용하여 사용자의 현재 위치정보 가져오기
-- `fetch()`, `async`, `await` 사용하여 날씨 데이터 호출
+- `fetch()`, `async`, `await` 사용하여 사용자 위치에 기반한 날씨 데이터 호출
 - `document.querySelector()`, `innerHTML`으로 호출한 날씨 데이터 화면에 구현
 ### 4. 기타 구현한 기능
 -  우측 최상단 버튼 클릭 시 다크모드/라이트모드 전환
