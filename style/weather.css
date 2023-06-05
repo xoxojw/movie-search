@@ -1,0 +1,69 @@
+/* 날씨위젯 */
+/* 출처 https://codepen.io/idkwthfml/pen/eYBObyv */
+.weather-container {
+  position: absolute;
+  top: 3vh;
+  left: 5vh;
+  width: 25vh;
+  height: auto;
+  color: var(--main-font-color);
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-location-dot {
+  margin-right: 5px;
+}
+
+.location {
+  font-size: 11pt;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.time {
+  margin-left: auto;
+  font-size: 11pt;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data {
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  width: 8vh;
+  padding: 0.2em;
+}
+
+.block i {
+  width: 20px;
+  color: #888888;
+}
+
+.conditions {
+  padding: 0.5em;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: var(--main-font-color);
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.temperature {
+  color: var(--main-point-color);
+  font-size: 1.3em;
+  font-weight: 700;
+}

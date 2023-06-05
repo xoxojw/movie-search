@@ -1,6 +1,8 @@
 @import "variables.css";
 @import "fonts.css";
 
+@import "weather.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +10,7 @@
 }
 
 body {
-  font-family: 'Pretendard-Regular', sans-serif;
+  font-family: "Pretendard-Regular", sans-serif;
   background: var(--main-bg-color);
   color: var(--main-font-color);
 }
@@ -21,7 +23,8 @@ h2 {
   font-size: 2.5em;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -34,7 +37,6 @@ a {
   text-decoration: none;
 }
 
-
 /* 페이지 헤더 */
 .page-header {
   display: flex;
@@ -45,83 +47,13 @@ a {
 }
 .page-title {
   user-select: none;
-  font-family: 'Cafe24Ssurround', sans-serif;
+  font-family: "Cafe24Ssurround", sans-serif;
 }
-.page-header-desc{
+.page-header-desc {
   margin-top: 40px;
   color: var(--main-point-color);
-  font-family: 'MaplestoryOTFBold', sans-serif;
+  font-family: "MaplestoryOTFBold", sans-serif;
 }
-
-/* 날씨위젯 */
-/* 출처 https://codepen.io/idkwthfml/pen/eYBObyv */
-.weather-container {
-  position: absolute;
-  top: 3vh;
-  left: 5vh;
-  width: 25vh;
-  height: auto;
-  color: var(--main-font-color);
-}
-
-.top-bar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.time {
-  margin-left: auto;
-}
-
-.fa-location-dot {
-  margin-right: 5px;
-}
-
-.location {
-  font-size: 11pt;
-  padding: 0.5em;
-  border-radius: 0.5em;
-}
-
-.time {
-  font-size: 11pt;
-}
-
-.info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.data {
-  font-size: 0.8em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.block {
-  width: 7vh;
-  padding: 0.2em;
-}
-.block i {
-  width: 20px;
-  color: #888888;
-}
-
-.conditions {
-  padding: 0.5em;
-  font-size: 1.7em;
-  font-weight: 700;
-  color: var(--main-font-color);
-  text-align: center;
-  flex-basis: 100%;
-}
-
-.temperature {
-  color: var(--main-point-color);
-  font-size: 1.3em;
-  font-weight: 700;
-}
-
 
 /* 다크모드 버튼 */
 .dark-btn_container {
@@ -136,7 +68,6 @@ a {
   background-color: transparent;
   font-size: 2em;
 }
-
 
 /* 영화 검색창 */
 .search {
@@ -154,7 +85,7 @@ a {
   border: 0;
   border-radius: 10px;
   background-color: #7c91b0ac;
-  transition:all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: #f1f3f5;
 }
 #search-input::placeholder {
@@ -169,11 +100,7 @@ a {
   border: none;
   min-width: 70px;
   min-height: 40px;
-  background: linear-gradient(
-      90deg,
-      #e9d493 0%,
-      #d1c04f 100%
-  );
+  background: linear-gradient(90deg, #e9d493 0%, #d1c04f 100%);
   border-radius: 1000px;
   color: #706042;
   cursor: pointer;
@@ -199,14 +126,14 @@ a {
 }
 @keyframes ring {
   0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
   }
   100% {
-      width: 200px;
-      height: 200px;
-      opacity: 0;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
   }
 }
 
@@ -220,7 +147,7 @@ a {
   text-align: center;
 }
 .sorting-list li {
-  display:inline-block;
+  display: inline-block;
 }
 .sorting-list button {
   padding: 25px;
@@ -246,27 +173,27 @@ a {
 .movie-card {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 10px rgba(0, 0, 0, 0.24);
   margin: 2vh;
-  padding: 30px;
+  padding: 20px;
   width: 30vh;
-  min-height: 70vh;
+  min-height: 40vh;
   background: var(--card-bg-color);
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
   line-height: 1.5;
-  transition:all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .movie-card:hover {
-	transform:scale(1.05);
-	-webkit-transform:scale(1.05);
-	-moz-transform:scale(1.05);
-	-o-transform:scale(1.05);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 .movie-card img {
   width: 100%;
   border-radius: 10px;
 }
-.movie-title { 
+.movie-title {
   font-size: 1.2em;
   margin-top: 0.5em;
   margin-bottom: 1.2em;
@@ -312,11 +239,10 @@ a {
 .myinfo a {
   color: var(--main-font-color);
 }
-.fa-github, .fa-house-chimney {
+.fa-github,
+.fa-house-chimney {
   font-size: 1.5em;
 }
-
-
 
 /* 노트북(좁은 데스크탑) 화면 - grid 3칸*/
 @media (min-width: 1301px) and (max-width: 1650px) {

@@ -14,7 +14,6 @@
 
   <body>
     <header class="page-header">
-      <div class="weather-container">
         <div class="weather-container">
           <div class="top-bar">
             <i class="fa-solid fa-location-dot"></i>
@@ -38,7 +37,6 @@
             </div>
           </div>
         </div>
-      </div>
       <div class="dark-btn_container">
         <button onclick="darkMode()" class="dark-btn">
           <span>🌙</span>
@@ -72,10 +70,7 @@
     </nav>
     <main class="card-list">
       <div class="movie-card">
-        <img
-          src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-          class="movie-poster"
-        />
+        <img src="" class="movie-poster"/>
         <h3 class="movie-title">영화 제목</h3>
         <p class="release-date">개봉일</p>
         <p class="movie-overview">미리보기</p>
@@ -89,18 +84,10 @@
     </div>
     <footer class="page-footer">
       <div class="myinfo">
-        <li>
-          <a href="https://github.com/xoxojw" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://xoxojw.tistory.com/" target="_blank">
-            <i class="fa-solid fa-house-chimney"></i>
-          </a>
-        </li>
-      </div>
     </footer>
-    <script src="./src/main.js"></script>
+    <script src="./src/weather.js"></script>
+    <script src="./src/moviecard.js"></script>
+    <script src="./src/search.js"></script>
+    <script src="./src/sort.js"></script>
   </body>
 </html>
