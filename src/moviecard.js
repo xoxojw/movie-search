@@ -37,7 +37,7 @@ const fetchMovieData = async () => {
     },
   };
   const response = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing?language=ko-KO&page=1",
+    "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
     fetchMovieOptions
   );
   const movieData = await response.json();
